@@ -1,0 +1,31 @@
+ul{
+    margin-top: 10px;
+}
+li{
+    cursor: pointer;
+}
+.link{
+    color: green;
+    border-color: #dee2e6 #dee2e6 #fff;
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+.text{
+
+    margin-left: 20px;
+    padding-top: 10px;
+    margin-bottom: -10px;
+    margin-right: 10px;
+}
+section{
+    position: relative;
+}
+.homeLink{
+    padding-top: 8px;
+    margin-bottom: -8px;
+    margin-right: 10px;
+    position: absolute;
+    right: -10px;
+    color: darkred;
+}

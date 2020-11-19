@@ -1,0 +1,40 @@
+<div class="container">
+    <form name="f1" class="form">
+        <label for="login">Login</label>
+        <input type="text" [(ngModel)]="newLogin" name="newLogin" id="login" placeholder="Enter login">
+        <label for="password">Password</label>
+        <input type="password" [(ngModel)]="newPassword" name="newPassword" id="password" placeholder="Enter password">
+        <label for="email">Email address</label>
+        <input type="email" [(ngModel)]="newEmail" name="newEmail" id="email" placeholder="Enter email">
+        <div class="button" *ngIf="isCheck; then some1; else some2"></div>
+        <ng-template #some1>
+            <input type="button" name="button" (click)="add()" id="button" value="Add user">
+        </ng-template>
+        <ng-template #some2>
+            <input type="button" name="button" (click)="save()" id="button" value="Save edit">
+        </ng-template>
+    </form>
+    <table id="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Login</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users; index as i">
+                <td>{{ i+1 }}</td>
+                <td>{{ user.login }}</td>
+                <td>{{ user.pass }}</td>
+                <td>{{ user.email }}</td>
+                <td class="edit" (click)="edit(i)">Edit</td>
+                <td><button class="delete" (click)="delete(i)" [disabled]="!isCheck"
+                        [style.backgroundColor]="delColor">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,18 @@
+<main>
+    <div class="block">
+        <div class="text">
+            <span>Bad words: </span>
+            <p class="words" [textContent]="badWords"></p>
+        </div>
+        <div class="addWords">
+            <input type="text" id="word" [placeholder]="inputPlaceholder" [style.borderColor]="wordBorderColor"
+                [(ngModel)]="word" name="word">
+            <input type="button" value="Add" id="add" (click)="addWord()">
+            <input type="button" value="Reset" id="reset" (click)="reset()">
+        </div>
+        <textarea id="writingWord" [placeholder]="areaPlaceholder" [style.borderColor]="textBorderColor"
+            [(ngModel)]="text" name="text"></textarea>
+        <input type="button" value="Ceenzor" id="cenzor" (click)="cenzor()">
+        <input type="button" value="Clear" id="clear" (click)="clear()">
+    </div>
+</main>
